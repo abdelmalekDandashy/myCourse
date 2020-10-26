@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-
-import Pax from '../../hoc/Pax';
 import Burger from '../../components/Burger/Burger';
+import Pax from '../../hoc/Pax';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
+import buildControl from '../../components/Burger/BuildControls/BuildControl/BuildControl';
 
 const INGREDIENT_PRICES = {
     salad: 0.5,
@@ -12,16 +12,13 @@ const INGREDIENT_PRICES = {
 };
 
 class BurgerBuilder extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {...}
-    // }
     state = {
         ingredients: {
-            salad: 0,
-            bacon: 0,
-            cheese: 0,
-            meat: 0
+            Salad: 0,
+            Bacon: 0,
+            Meat: 0,
+            Cheese: 0
+            
         },
         totalPrice: 4,
         purchasable: false
@@ -68,8 +65,7 @@ class BurgerBuilder extends Component {
         this.setState( { totalPrice: newPrice, ingredients: updatedIngredients } );
         this.updatePurchaseState(updatedIngredients);
     }
-
-    render () {
+ render () {
         const disabledInfo = {
             ...this.state.ingredients
         };
@@ -88,7 +84,7 @@ class BurgerBuilder extends Component {
                     price={this.state.totalPrice} />
             </Pax>
         );
-    }
+    }   
 }
 
 export default BurgerBuilder;

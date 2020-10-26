@@ -1,3 +1,3 @@
-const Pax = (props)=> props.children;
+const Pax = (props) => props.children;
 
 export default Pax;
